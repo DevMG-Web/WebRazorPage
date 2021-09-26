@@ -1,0 +1,34 @@
+﻿@page
+@model WebApplication1.Pages.Tags.CacheTagModel
+@{
+    ViewData["Title"] = "CacheTag";
+}
+
+<h2>Cache Tag</h2>
+
+<span>Sin cache: @DateTime.Now</span>
+<br />
+<cache vary-by-header="User-Agent" expires-after="@TimeSpan.FromDays(5)">
+    Con Cache: @DateTime.Now
+</cache>
+
+<!--
+    Atributos:
+
+    Expira en una fecha especifica:
+        expire-on="new DateTime(2025,1,29,17,02,0)"
+
+    Expira luego de haber transcurrido una cantidad de tiempo indicada:
+        expires-after="TimeSpan.FromMinutes(2)"
+
+    Expira si no se ha accedido al recurso luego de una cantidad de tiempo determinada:
+        expires-sliding="TimeSpan.FromMinutes(1)"
+
+    Varia el cache segun valor cabecera de la peticion HTTP
+        vary-by-header="User-Agent"
+
+    Varia el cache segun el usuario
+        vary-by-user: true
+
+    ... Entre otros
+  --->

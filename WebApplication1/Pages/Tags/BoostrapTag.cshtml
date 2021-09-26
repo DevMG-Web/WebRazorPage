@@ -1,0 +1,26 @@
+﻿@page
+@model WebApplication1.Pages.Tags.BoostrapTagModel
+@{
+    ViewData["Title"] = "BootstrapTag";
+}
+
+<h2>BootstrapTag</h2>
+<h4>Modal bootstrap</h4>
+
+<a href="#" 
+   class="btn btn-primary btn-lg"
+   bs-toggle-modal="simpleModalFromAnchor" >
+    Launch modal
+</a>
+
+<modal id="simpleModalFromAnchor"
+       title="Modal title">
+    <modal-body>
+        <h4>Something happened</h4>
+        <p>Something happened</p>
+    </modal-body>
+</modal>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

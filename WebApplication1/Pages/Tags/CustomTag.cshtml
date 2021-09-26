@@ -1,0 +1,19 @@
+﻿@page
+@model WebApplication1.Pages.Tags.CustomTagModel
+@{
+    ViewData["Title"] = "CustomTag";
+    var aprobado = true;
+}
+
+<h2>Personalizado</h2>
+
+<div condition="aprobado">
+    Usted ha sido aprobado :)
+</div>
+<div Condition="!aprobado">
+    Usted ha sido rechazado :(
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

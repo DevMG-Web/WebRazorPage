@@ -1,0 +1,11 @@
+﻿@page
+@model WebApplication1.Pages.Ejemplo.CuentasModel
+@{
+    ViewData["Title"] = "Cuentas";
+}
+
+<h2>Cuentas</h2>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
